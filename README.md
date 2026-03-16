@@ -10,4 +10,4 @@ This is my repo for **STATS 220**.
 - I am interested in learning about data collection and presentation.
 - I like the song  [*Yo-Yo-Yoshi!*](https://www.youtube.com/watch?v=y4X7opDapyE) from Yoshi's Story.
 
-A meme that captures how I currently feel about my university studies is ![smurf_2_gif](https://media1.tenor.com/m/SMofz9nf0VEAAAAd/smurf-smurfette.gif "Smurf evil gif")
+A meme that captures how I currently feel about my university studies is ![smurf_2_gif](https://media1.tenor.com/m/SMofz9nf0VEAAAAd/smurf-smurfette.gif)
