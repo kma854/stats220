@@ -15,15 +15,15 @@ logged_data$Matchup <- paste(logged_data$PlayerSpecies, logged_data$OpponentSpec
 
 ```{css}
 h3{
-  text-align: "center";
-  margin-left: 25%;
-  
+    margin-left: 25%;
+
 
 }
 h2{
   font-family: 'Courier New';
-  text-align: 'center';
   size: 150px;
+  text-align: "center";
+
 }
 p{
   padding: 10px;
