@@ -22,7 +22,10 @@ h2{
 }
 p{
  text-align: "center";
-
+  padding: 10px;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 50px;
 }
 ```
 
