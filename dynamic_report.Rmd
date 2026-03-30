@@ -14,10 +14,14 @@ logged_data$Matchup <- paste(logged_data$PlayerSpecies, logged_data$OpponentSpec
 ```
 
 ```{css}
+h3{
+
+}
 h2{
 
 }
 p{
+ text-align: "center";
 
 }
 ```
@@ -26,6 +30,7 @@ p{
 
 ## Tracking How Different Parameters Can Affect The Duration and Result of a Starcraft 2 Game.
 
+### Upgrade Advantage Effect On Win Rate
 When watching pro-level Starcraft 2, the upgrade advantage was something often emphasized. As an admittedly much less competent player than some of the best in the world, I was curious if there would be any affect it would make on my gameplay results.
 
 ```{r, fig.align='center'}
@@ -44,7 +49,7 @@ win_rate <- round(length(logged_data$Match_Winner[logged_data$Match_Winner == "P
 
 Looking at this data, it's very clear that the upgrades played a very small if any role in determining the victor: Each bar seems to show the opponent having a slight advantage in wins, which simply correlates to my win rate during the observations, which totaled to `r win_rate * 100`%.
 
-
+### "Snowball" Effect Based On Species Matchup
 
 In Starcraft 2, games can often snowball from the result of the first fight: the player who wins the first fight can often have an advantage in winning the next, and so on until they win the game. To see if the matchup played affects this, we'll look at the difference in time between the first fight and the game ending, and compare each matchup, to see if any particular matchup stands out as incredibly volatile or stagnant.
 
