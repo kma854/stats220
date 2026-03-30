@@ -70,7 +70,7 @@ ggplot(data = logged_data) +
   labs(title = "Snowball Effect of the First Encounter Based on Matchup",
        x = "Time between the first attack and the game ending",
        y = "Number of Games",
-
+    )
 ## generate means of time, for both the first engagement and the duration of the whole game, based on what species the player who is recording the information played. While this data doesn't let us say as much (doesn't account for the species of the opponent), the data set is much larger.
 
 average_first_engagement_terran <- round(mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Terran"]), 2)
