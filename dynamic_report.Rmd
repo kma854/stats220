@@ -15,9 +15,12 @@ logged_data$Matchup <- paste(logged_data$PlayerSpecies, logged_data$OpponentSpec
 
 ```{css}
 h3{
+  text-align: "center";
+  padding: 50px;
+  
 
 }
-h2, h3{
+h2{
   font-family: 'Courier New';  
 
 }
@@ -58,6 +61,7 @@ Looking at this data, it's very clear that the upgrades played a very small if a
 In Starcraft 2, games can often snowball from the result of the first fight: the player who wins the first fight can often have an advantage in winning the next, and so on until they win the game. To see if the matchup played affects this, we'll look at the difference in time between the first fight and the game ending, and compare each matchup, to see if any particular matchup stands out as incredibly volatile or stagnant.
 
 ```{r, fig.align='center'}
+## generate graph
 ggplot(data = logged_data) +
   geom_bar(aes(x = Time_of_game_ending - Time_of_first_attack, ##if this number is large, it means that the first fight is less meaningful. 
                fill = Matchup)) + 
@@ -66,10 +70,21 @@ ggplot(data = logged_data) +
   labs(title = "Snowball Effect of the First Encounter Based on Matchup",
        x = "Time between the first attack and the game ending",
        y = "Number of Games",
+
+## generate means of time, for both the first engagement and the duration of the whole game, based on what species the player who is recording the information played. While this data doesn't let us say as much (doesn't account for the species of the opponent), the data set is much larger.
+average_first_engagement_terran <- mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Terran"])
+average_first_engagement__protoss <- mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Protoss"])
+average_first_engagement_zerg <- mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Zerg"])
+
+
+average_game_time_terran <- mean(logged_data$Time_of_game_ending[logged_data$PlayerSpecies == "Terran"])
+average_game_time_protoss <- mean(logged_data$Time_of_game_ending[logged_data$PlayerSpecies == "Protoss"])
+average_game_time_zerg <- mean(logged_data$Time_of_game_ending[logged_data$PlayerSpecies == "Zerg"])
   )
 
 ```
 
-Looking at this data, we can immediately see a problem; there are too many categories for the amount of data. For this specific inquiry as well, fields like "Protoss Terran" and "Terran Protoss" are redundant distinctions. Interestingly, one version of the matchup is actually missing: "Terran Protoss", as I suppose by pure chance I did not run into that matchup in my findings. Given this, more data will likely have to be collected in order to draw sufficient conlusions. Still, looking at the graph we can see a few eye-catching things: while there seems to be a pretty standard bell curve forming between 0 and 5 minutes indicating no correlation, we are also seeing some interesting outliers: all three of the zerg matchups seem to rest by 9 exactly minutes, and terran zerg seems to have the least stable trend, being the graph's sole minimum time and maximum time difference.
+Looking at this data, we can immediately see a problem; there are too many categories for the amount of data. For this specific inquiry as well, fields like "Protoss Terran" and "Terran Protoss" are redundant distinctions. Interestingly, one version of the matchup is actually missing: "Terran Protoss", as I suppose by pure chance I did not run into that matchup in my findings. Given this, more data will likely have to be collected in order to draw sufficient conlusions. Still, looking at the graph we can see a few eye-catching things: while there seems to be a pretty standard bell curve forming between 0 and 5 minutes indicating no correlation, we are also seeing some interesting outliers: all three of the zerg matchups seem to rest by 9 exactly minutes, and terran zerg seems to have the least stable trend, being the graph's sole minimum time and maximum time difference. That being said, all of this data shows no clear correlation between the snowball effect of the game and specific species' matchups: the limited data simply doesn't give us enough to work with.
+With this in mind, we are still able to make some interesting claims about the time I played as a specific species (this is likely since this data set is approximately 3 times larger than the other): the average time of an engagement went to Zerg by a pretty significant amount, with their average time being `r round(average_first_engagement_zerg, 2)` minutes, compared to Terran and Protoss taking `r round(average_first_engagement_terran, 2)` and `r round(average_first_engagement_protoss, 2)` respectively.
 
 
