@@ -72,14 +72,10 @@ ggplot(data = logged_data) +
        y = "Number of Games",
 
 ## generate means of time, for both the first engagement and the duration of the whole game, based on what species the player who is recording the information played. While this data doesn't let us say as much (doesn't account for the species of the opponent), the data set is much larger.
+
 average_first_engagement_terran <- round(mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Terran"]), 2)
 average_first_engagement__protoss <- round(mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Protoss"]), 2)
 average_first_engagement_zerg <- round(mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Zerg"]), 2)
-
-
-average_game_time_terran <- mean(logged_data$Time_of_game_ending[logged_data$PlayerSpecies == "Terran"])
-average_game_time_protoss <- mean(logged_data$Time_of_game_ending[logged_data$PlayerSpecies == "Protoss"])
-average_game_time_zerg <- mean(logged_data$Time_of_game_ending[logged_data$PlayerSpecies == "Zerg"])
   )
 
 ```
