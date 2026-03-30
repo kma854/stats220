@@ -76,7 +76,6 @@ ggplot(data = logged_data) +
 average_first_engagement_terran <- round(mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Terran"]), 2)
 average_first_engagement__protoss <- round(mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Protoss"]), 2)
 average_first_engagement_zerg <- round(mean(logged_data$Time_of_first_attack[logged_data$PlayerSpecies == "Zerg"]), 2)
-  )
 
 ```
 
