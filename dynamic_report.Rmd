@@ -26,7 +26,6 @@ p{
   border-style: solid;
   border-color: grey;
   border-radius: 50px;
-  margin-right: 750px;
 }
 ```
 
@@ -36,7 +35,6 @@ p{
 
 ### Upgrade Advantage Effect On Win Rate
 When watching pro-level Starcraft 2, the upgrade advantage was something often emphasized. As an admittedly much less competent player than some of the best in the world, I was curious if there would be any affect it would make on my gameplay results.
-<div>
 ```{r, fig.align='center'}
 ## generate graph
 ggplot(data = logged_data) +
@@ -47,7 +45,6 @@ ggplot(data = logged_data) +
        x = "upgrade advantage",
        y = "Number of Games",
   )
-</div>
 ## generate win rate.
 win_rate <- round(length(logged_data$Match_Winner[logged_data$Match_Winner == "Player"]) / nrow(logged_data), 2)
 ```
@@ -57,7 +54,6 @@ Looking at this data, it's very clear that the upgrades played a very small if a
 ### "Snowball" Effect Based On Species Matchup
 
 In Starcraft 2, games can often snowball from the result of the first fight: the player who wins the first fight can often have an advantage in winning the next, and so on until they win the game. To see if the matchup played affects this, we'll look at the difference in time between the first fight and the game ending, and compare each matchup, to see if any particular matchup stands out as incredibly volatile or stagnant.
-<div>
 ```{r, fig.align='center'}
 ggplot(data = logged_data) +
   geom_bar(aes(x = Time_of_game_ending - Time_of_first_attack, ##if this number is large, it means that the first fight is less meaningful. 
@@ -68,7 +64,6 @@ ggplot(data = logged_data) +
        x = "Time between the first attack and the game ending",
        y = "Number of Games",
   )
-</div>
 
 ```
 
