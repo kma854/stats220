@@ -11,4 +11,4 @@ As for other things about me:
 - I could probably teach a semester-long course around the Lorax 2012 movie - I have a lot to say about it, I think it's a deeply fascinating film.
 - I like the song  [*Yo-Yo-Yoshi!*](https://www.youtube.com/watch?v=y4X7opDapyE) from Yoshi's Story.
 
-A meme that captures how I currently feel about my university studies is ![smurf_2_gif](https://tenor.com/view/cat-walking-on-feet-gif-12414663082192393944)
+A meme that captures how I currently feel about my university studies is ![walking_cat_gif](https://tenor.com/view/cat-walking-on-feet-gif-12414663082192393944)
