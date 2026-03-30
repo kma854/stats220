@@ -35,6 +35,7 @@ p{
 
 ### Upgrade Advantage Effect On Win Rate
 When watching pro-level Starcraft 2, the upgrade advantage was something often emphasized. As an admittedly much less competent player than some of the best in the world, I was curious if there would be any affect it would make on my gameplay results.
+
 ```{r, fig.align='center'}
 ## generate graph
 ggplot(data = logged_data) +
@@ -54,6 +55,7 @@ Looking at this data, it's very clear that the upgrades played a very small if a
 ### "Snowball" Effect Based On Species Matchup
 
 In Starcraft 2, games can often snowball from the result of the first fight: the player who wins the first fight can often have an advantage in winning the next, and so on until they win the game. To see if the matchup played affects this, we'll look at the difference in time between the first fight and the game ending, and compare each matchup, to see if any particular matchup stands out as incredibly volatile or stagnant.
+
 ```{r, fig.align='center'}
 ggplot(data = logged_data) +
   geom_bar(aes(x = Time_of_game_ending - Time_of_first_attack, ##if this number is large, it means that the first fight is less meaningful. 
