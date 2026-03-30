@@ -14,7 +14,12 @@ logged_data$Matchup <- paste(logged_data$PlayerSpecies, logged_data$OpponentSpec
 ```
 
 ```{css}
+h2{
 
+}
+p{
+
+}
 ```
 
 
@@ -58,4 +63,5 @@ ggplot(data = logged_data) +
 ```
 
 Looking at this data, we can immediately see a problem; there are too many categories for the amount of data. For this specific inquiry as well, fields like "Protoss Terran" and "Terran Protoss" are redundant distinctions. Interestingly, one version of the matchup is actually missing: "Terran Protoss", as I suppose by pure chance I did not run into that matchup in my findings. Given this, more data will likely have to be collected in order to draw sufficient conlusions. Still, looking at the graph we can see a few eye-catching things: while there seems to be a pretty standard bell curve forming between 0 and 5 minutes indicating no correlation, we are also seeing some interesting outliers: all three of the zerg matchups seem to rest by 9 exactly minutes, and terran zerg seems to have the least stable trend, being the graph's sole minimum time and maximum time difference.
+
 
