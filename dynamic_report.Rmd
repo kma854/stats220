@@ -15,8 +15,7 @@ logged_data$Matchup <- paste(logged_data$PlayerSpecies, logged_data$OpponentSpec
 
 ```{css}
 h3{
-    margin-left: 25%;
-
+    margin-left: 15%;
 
 }
 h2{
